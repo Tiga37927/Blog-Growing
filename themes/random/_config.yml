@@ -104,7 +104,7 @@ vegasConfig:
     # - flash
     - flash2
   timer: true
-  delay: 10000
+  delay: 5000
   shuffle: true
   count: 28
 
