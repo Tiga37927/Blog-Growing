@@ -4,11 +4,11 @@ language: en
 
 # main menu navigation
 menu:
-  Home: index.html
-  Archives: archives
-  # Tags: tags
-  # Categories: categories
-  About: about
+  首页: /
+  文章: archives
+  标签: tags
+  分类: categories
+  关于: about
   Github: https://github.com/stiekel/hexo-theme-random
 
 social:
@@ -106,7 +106,7 @@ vegasConfig:
   timer: true
   delay: 5000
   shuffle: true
-  count: 28
+  count: 10
 
 unsplashConfig:
   # more about config on https://unsplash.it/
