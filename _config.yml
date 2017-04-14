@@ -4,7 +4,7 @@
 
 # Site
 title: walker
-subtitle: 解决问题的方法就在那里，看你敢不敢去尝试，去折腾！
+subtitle: 学习是一个从模仿到创造的过程
 description: web前端,javascript,react,vue,webpack等工作记录
 author: Young
 language: zh-CN
@@ -41,7 +41,7 @@ highlight:
   enable: true
   line_number: true
   auto_detect: false
-  tab_replace:
+  tab_replace: 
 
 # Category & Tag
 default_category: uncategorized
