@@ -19,3 +19,5 @@ date: 2017-04-28 23:36:45
   > 安装过程可能会出现下载很慢，可选择离线安装，将[离线包](http://pan.baidu.com/s/1mhF9oQ8)导入
 + 运行官方demo可能会下载缓慢，将[此包放到react-native\ReactAndroid\build\downloads](http://pan.baidu.com/s/1bLtrci)下
 + 组件绑定props传入的事件需要bind(this)或者onPress={() => this.props.onPress()}
++ 完成图书、电影模块 [demo地址](https://github.com/youngauto/Cake)
+
