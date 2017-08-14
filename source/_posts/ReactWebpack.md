@@ -47,8 +47,8 @@ date: 2017-04-15 23:36:45
 	};
    ​```
    ** index.html **
-   ​```
-     <!DOCTYPE html>
+   ``` html
+    <!DOCTYPE html>
     <html>
     <head>
         <meta charset="UTF-8"/>
@@ -57,7 +57,7 @@ date: 2017-04-15 23:36:45
     <script src="bundle.js"></script>
     </body>
     </html>
-   ​```
+   ```
 
 运行`npm run build` 在浏览器打开index.html，查看
 2. 为免去频繁执行`npm run build`，使用webpack-dev-server
@@ -80,25 +80,6 @@ date: 2017-04-15 23:36:45
 3. 使用react
     `npm i react react-dom`
 4. webpack配置
-	* HtmlWebpackPlugin 用于生成页面模板index.html/index.ejs， bundle.js等，具体[配置参数](https://segmentfault.com/a/1190000007294861)
-	* ExtractTextPlugin webpack会将所有文件打包进js，这个插件会将css从js中分离，从而降低js的加载时间和大小，使得页面可以异步加载css，避免页面加载完js后重绘，[具体使用方式](http://www.cnblogs.com/sloong/p/5826818.html)
-	* babel
-
-​```js
-
-​```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  * HtmlWebpackPlugin 用于生成页面模板index.html/index.ejs， bundle.js等，具体[配置参数](https://segmentfault.com/a/1190000007294861)
+  * ExtractTextPlugin webpack会将所有文件打包进js，这个插件会将css从js中分离，从而降低js的加载时间和大小，使得页面可以异步加载css，避免页面加载完js后重绘，[具体使用方式](http://www.cnblogs.com/sloong/p/5826818.html)
+  * babel
