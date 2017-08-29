@@ -27,14 +27,14 @@ date: 2017-04-15 23:36:45
 * package.json
 * webpack.config.js
    ** main.js **
-   ​```js
+   ```javascript
      'use strict';
      import component from './component'
 
      document.body.appendChild(component());
-   ​```
+   ```
    ** component.js
-   ​```js
+   ```javascript
      'use strict';
 
 
@@ -45,7 +45,7 @@ date: 2017-04-15 23:36:45
 	
 		return element;
 	};
-   ​```
+   ```
    ** index.html **
    ``` html
     <!DOCTYPE html>
