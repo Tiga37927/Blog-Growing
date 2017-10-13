@@ -100,12 +100,14 @@ date: 2017-08-28 23:36:45
 
   ``` javascript
   // 节流
-  function throttle(fn, wait) {
+  function throttle(fn, wait=500) {
     var timer;
     return function(...args) {
       if(!timer) {
-        timer = setTimeout(() => timer = null, wait)
-        return fn.apply(this, args)
+        fn.apply(this, args)
+        timer = setTimeout(() => {
+          timer = null
+        }, wait)
       }
     }
   }
