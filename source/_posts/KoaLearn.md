@@ -32,9 +32,12 @@ CommonJS模块输出的是一个值的拷贝，ES6模块输出的是值的引用
 
 CommonJS模块是运行时加载，ES6模块式编译时输出接口
 
+建议在Dao中使用promisefyAll处理，async/await不适合批量处理
+
 ### 使用koa-router作为路由
 
 ``` javascript
+view中间件一定要在route中间件之前注册，否则会提示ctx.render错误
 npm install --save koa-router@7
 const Router = require('koa-router')
 
@@ -66,13 +69,14 @@ router.use('/page', page.routes(), page.allowedMethods())
 
 // 加载路由中间件
 app.use(router.routes()).use(router.allowedMethods())
-
 ```
 
 ### 使用koa-bodyparser解析参数
 
 ``` javascript
 npm install --save koa-bodyparser@3
+get请求使用querystring解析
+post使用bodyParser
 const bodyParser = require('koa-bodyparser')
 
 // 使用ctx.body解析中间件
@@ -100,6 +104,45 @@ app.use( async ( ctx ) => {
   ctx.body = 'hello world'
 })
 
+app.listen(3000)
+console.log('[demo] static-use-middleware is starting at port 3000')
+
+访问http://localhost:3000/v2.jpg
+```
+
+### 文件上传使用koa-multer处理
+
+``` javascript
+const Koa = require('koa')
+const path = require('path')
+const router = require('koa-router')()
+const multer = require('koa-multer')
+
+const app = new Koa()
+
+app.use(router.routes())
+   .use(router.allowedMethods())
+// 上传之后是一个二进制文件
+const upload = multer({ dest: 'uploads/' })
+// diskStorage存在服务器上，memoryStorage存在内存之中
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  // 设置文件名
+  filename: function (req, file, cb) {
+    var splits = file.originalname.split('.');
+    var suffix = splits[splits.length - 1]
+    cb(null, splits[0] + '-' + Date.now() + '.' + suffix)
+  }
+})
+const upload = multer({ 
+  storage: storage
+})
+
+router.post('/profile', upload.single('upfiles'),function (ctx, next){
+  ctx.body = "upload is success";
+});
 app.listen(3000)
 console.log('[demo] static-use-middleware is starting at port 3000')
 
@@ -251,6 +294,13 @@ pool.getConnection(function(err, connection) {
   })
 })
 
+```
 
+### mongoose处理mongDB
+
+```
+const mongoose = require('mongoose')
+
+mongoose.connect('mongodb://localhost:27017/auto')
 ```
 
