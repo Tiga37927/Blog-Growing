@@ -34,4 +34,106 @@ date: 2017-12-27 23:36:45
 * 总体架构
 
 
-// todo
+详见：https://medium.com/leanjs/universal-create-react-app-step-by-step-b80ba68d125d
+
+### Step 1
+
+* create-react-app my-app
+
+* npm run eject 要修改一些配置
+
+* 创建三个文件夹
+
+  src/client
+  src/server
+  src/shared
+
+* /client
+
+  src/index.js-->src/client/index.js
+
+  src/index.css-->src/client/index.css
+
+  src/registerServiceWorker.js to src/client/registerServiceWorker.js
+
+  copy App.css内容到client/index.css里面
+
+  添加react-router-dom，修改/client/index.js内容：
+
+  - Replace import App from ‘./App’; for import App from ‘../shared/App’;
+  - Add import { BrowserRouter as Router } from ‘react-router-dom’
+  - Replace 
+    ReactDOM.render(<App />, document.getElementById(‘root’));
+    with:
+    ReactDOM.render(
+     <Router><App /></Router>,
+     document.getElementById(‘root’)
+    );
+
+* /shared
+
+  - src/App.js to src/shared/App.js
+  - src/App.test.js to src/shared/App.test.js
+  - src/logo.svg to src/shared/logo.svg
+
+* /server
+
+  - src/server/index.js
+  - src/server/app.js
+  - src/server/render.js
+  - yarn add express nodemon webpack-node-externals http-proxy-middleware isomorphic-fetch
+
+### Step 2
+
+​	**/src/server/index.js**
+
+* 1.创建和启动服务
+
+* 2.如果是生产环境，要代理url路径
+
+  [https://github.com/leanjscom/universal-create-react-app/blob/master/src/server/index.js]: https://github.com/leanjscom/universal-create-react-app/blob/master/src/server/index.js
+
+* 3.根据根路径映射url资源`app.use(‘/’, express.static(‘build/client’))`
+
+* 4.使用与react相关
+
+  #### /src/server/app.js
+
+* 接收请求，处理路由
+
+  #### /src/server/render.js
+
+* 渲染Dom
+
+### Step 3
+
+​	/package.json
+
+​	add:
+
+​	"serve": "NODE_ENV=production node ./build/server/bundle.js",
+
+​    	"build-client": "node scripts/build-client.js",
+
+   	"build-server": "node scripts/build-server.js",
+
+   	 "build": "npm run build-client && npm run build-server"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
