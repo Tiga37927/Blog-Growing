@@ -14,5 +14,8 @@ date: 2017-04-14 23:36:45
 * photoshop[ps cs6](http://rj.baidu.com/soft/detail/23675.html?ald)
 * ps插件-设计标注[assistorps]()
 * 前端开发ide-vscode
+* postman发送post请求
+  * 1.header--->Content-Type:application/json
+  * 2.body--->Raw--->{"name": xxx}
 
 
