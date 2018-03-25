@@ -4,7 +4,9 @@ id: 20170813
 tags:
   - nodejs
   - center os
-categories:
+  - nginx
+categories:  
+  - nginx
   - 其他
   - 服务器
 
