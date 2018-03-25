@@ -34,3 +34,25 @@ date: 2017-04-28 23:36:45
 + 修改app logo和名称: ![TIM截图20170519102015](C:/Users/yx/Desktop/TIM截图20170519102015.png)
 
   修改values下面的string.xml的* <string name="app_name">一场旅行</string> *，完成后在android目录下执行* * ./gradlew clean * 然后在执行运行命令即可
+
++ android支持图片格式问题`android/app/build.gradle`：
+
+  ```javascript
+  dependencies {
+    // 如果你需要支持Android4.0(API level 14)之前的版本
+    compile 'com.facebook.fresco:animated-base-support:0.11.0'
+
+    // 如果你需要支持GIF动图
+    compile 'com.facebook.fresco:animated-gif:0.11.0'
+
+    // 如果你需要支持WebP格式，包括WebP动图
+    compile 'com.facebook.fresco:animated-webp:0.11.0'
+    compile 'com.facebook.fresco:webpsupport:0.11.0'
+
+    // 如果只需要支持WebP格式而不需要动图
+    compile 'com.facebook.fresco:webpsupport:0.11.0'
+  }
+  ```
+
+  ​
+
