@@ -14,11 +14,21 @@ date: 2017-04-28 23:36:45
 
 + [android ndk](https://facebook.github.io/react-native/docs/android-building-from-source.html)
   > 选择平台对应版本
+
 + 虚拟设备：[genymotion](http://pan.baidu.com/s/1geNQZ5p)
+
++ Android studio 弹出unable to access android sdk add-on list原因是你电脑没有SDK而且你下载的android studio又是不带SDK的； 解决方法：在自己安装的目录下找到：bin\idea.properties打开这个文件末尾添加一行disable.android.first.run=true
+
++ 环境变量：`ANDROID_HOME`指向：Sdk,`path`中添加`%ANDROID_HOME%\tools`
+
+
 + [cygwin](http://pan.baidu.com/s/1jHNKSa6)
   > 安装过程可能会出现下载很慢，可选择离线安装，将[离线包](http://pan.baidu.com/s/1mhF9oQ8)导入
+
 + 运行官方demo可能会下载缓慢，将[此包放到react-native\ReactAndroid\build\downloads](http://pan.baidu.com/s/1bLtrci)下
+
 + 组件绑定props传入的事件需要bind(this)或者onPress={() => this.props.onPress()}
+
 + 完成图书、电影模块 [demo地址](https://github.com/youngauto/Cake)
 
 ## 2、学习记录点
